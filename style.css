@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --Very-dark-blue-main-background: hsl(233, 47%, 7%);
+    --Dark-desaturated-blue-card-background: hsl(244, 38%, 16%);
+    --Soft-violet-accent: hsl(277, 64%, 61%);
+    --White-main-heading-stats: hsl(0, 0%, 100%);
+    --Slightly-transparent-white-main-paragraph: hsla(0, 0%, 100%, 0.75);
+    --Slightly-transparent-white-stat-headings: hsla(0, 0%, 100%, 0.6);
+}
+
+body {
+    font-size: 15px;
+    background-color: var(--Very-dark-blue-main-background);
+    font-family: "Lexend Deca", sans-serif;
+
+}
+
+.container {
+    position: relative;
+    width: 1000px;
+    margin: auto;
+    margin-top: 250px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 100px);
+    grid-template-areas: "right left" "right left";
+}
+
+.right {
+    grid-area: right;
+    height: 400px;
+    padding: 60px;
+    background-color: var(--Dark-desaturated-blue-card-background);
+    color: var(--White-main-heading-stats);
+
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.left {
+    grid-area: left;
+    background-image: url(./images/image-header-desktop.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+    backdrop-filter: var(--Soft-violet-accent);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+}
+
+.left:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 200%;
+    background-color: hsl(277, 87%, 27%);
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.right h1 span {
+    color: var(--Soft-violet-accent);
+}
+
+.right>p {
+    color: var(--Slightly-transparent-white-stat-headings);
+    margin-top: 25px;
+    line-height: 1.6;
+    width: 95%;
+}
+
+.num {
+    margin-top: 70px;
+    width: 85%;
+}
+
+.num {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.num p {
+    text-transform: uppercase;
+    color: var(--Slightly-transparent-white-stat-headings);
+    font-size: 12px;
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+@media (max-width:600px) {
+    
+    .container {
+        position: relative;
+        width: 80%;
+        margin: auto;
+        margin-top: 0;
+        gap: 300px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 100px);
+        grid-template-areas: "left left"
+            "right right";
+    }
+
+    .left:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 80%;
+        background-color: hsl(277, 87%, 27%);
+        opacity: 0.5;
+        z-index: 1;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+    }
+
+    .left {
+        grid-area: left;
+        background-image: url(./images/image-header-mobile.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 400px;
+        backdrop-filter: var(--Soft-violet-accent);
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        border-bottom-right-radius: 0;
+
+        backdrop-filter: var(--Soft-violet-accent);
+
+    }
+
+    .right {
+        grid-area: right;
+        text-align: center;
+        height: 550px;
+        padding: 60px;
+        margin-bottom: 30px;
+        background-color: var(--Dark-desaturated-blue-card-background);
+        color: var(--White-main-heading-stats);
+        border-bottom-right-radius: 15px;
+        border-bottom-left-radius: 15px;
+        border-top-left-radius: 0;
+    }
+
+    .right h1 {
+        width: 110%;
+        text-align: center;
+        padding-right: 20px;
+    }
+
+    .right>p {
+        color: var(--Slightly-transparent-white-stat-headings);
+        margin-top: 25px;
+        line-height: 1.6;
+        width: 95%;
+    }
+
+    .num {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 30px;
+        padding-left: 30px;
+
+    }
+
+
+    .num p {
+        text-transform: uppercase;
+        color: var(--Slightly-transparent-white-stat-headings);
+        font-size: 12px;
+        font-weight: 300;
+        margin-top: 5px;
+    }
+}
